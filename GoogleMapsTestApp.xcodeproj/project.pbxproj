@@ -8,22 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		5C3B31B210A56A375622FDD5 /* Pods_GoogleMapsTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BA839BB71BA77A71184915 /* Pods_GoogleMapsTestApp.framework */; };
+		AF75EA352B0927FB00662462 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75EA342B0927FB00662462 /* NetworkService.swift */; };
+		AF75EA372B09287400662462 /* CoordinateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75EA362B09287400662462 /* CoordinateModel.swift */; };
+		AF75EA392B092C0400662462 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75EA382B092C0400662462 /* MainViewModel.swift */; };
+		AF75EA3C2B09344B00662462 /* CoordinatesAndDateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75EA3B2B09344B00662462 /* CoordinatesAndDateModels.swift */; };
+		AF8480902B0A80AD00162D72 /* GMSMarker extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF84808F2B0A80AD00162D72 /* GMSMarker extension.swift */; };
 		AFA819782B026F4200AB9255 /* GoogleMapsTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA819772B026F4200AB9255 /* GoogleMapsTestAppApp.swift */; };
-		AFA8197A2B026F4200AB9255 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA819792B026F4200AB9255 /* MapView.swift */; };
+		AFA8197A2B026F4200AB9255 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA819792B026F4200AB9255 /* MainView.swift */; };
 		AFA8197C2B026F4300AB9255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA8197B2B026F4300AB9255 /* Assets.xcassets */; };
 		AFA8197F2B026F4300AB9255 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA8197E2B026F4300AB9255 /* Preview Assets.xcassets */; };
 		AFC415FD2B0298B6004D2E21 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC415FC2B0298B6004D2E21 /* GoogleMapView.swift */; };
+		AFE42BDE2B03FF4D0036C35F /* ResourcesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE42BDD2B03FF4D0036C35F /* ResourcesEnums.swift */; };
+		AFE42BE12B0405C00036C35F /* CustomProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE42BE02B0405C00036C35F /* CustomProgressViewStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DA7084E8259AACA35621054 /* Pods-GoogleMapsTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTestApp.release.xcconfig"; path = "Target Support Files/Pods-GoogleMapsTestApp/Pods-GoogleMapsTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		9006EC58A4133EAD4EC2A275 /* Pods-GoogleMapsTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTestApp.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsTestApp/Pods-GoogleMapsTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AF75EA342B0927FB00662462 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AF75EA362B09287400662462 /* CoordinateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateModel.swift; sourceTree = "<group>"; };
+		AF75EA382B092C0400662462 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		AF75EA3B2B09344B00662462 /* CoordinatesAndDateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesAndDateModels.swift; sourceTree = "<group>"; };
+		AF84808F2B0A80AD00162D72 /* GMSMarker extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMarker extension.swift"; sourceTree = "<group>"; };
 		AFA819742B026F4200AB9255 /* GoogleMapsTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA819772B026F4200AB9255 /* GoogleMapsTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTestAppApp.swift; sourceTree = "<group>"; };
-		AFA819792B026F4200AB9255 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		AFA819792B026F4200AB9255 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AFA8197B2B026F4300AB9255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFA8197E2B026F4300AB9255 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AFC415FC2B0298B6004D2E21 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
+		AFE42BDD2B03FF4D0036C35F /* ResourcesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesEnums.swift; sourceTree = "<group>"; };
+		AFE42BE02B0405C00036C35F /* CustomProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressViewStyle.swift; sourceTree = "<group>"; };
 		F3BA839BB71BA77A71184915 /* Pods_GoogleMapsTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapsTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -39,6 +53,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF75EA332B09230200662462 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AF75EA342B0927FB00662462 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AF75EA3A2B09343200662462 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF75EA362B09287400662462 /* CoordinateModel.swift */,
+				AF75EA3B2B09344B00662462 /* CoordinatesAndDateModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF84808E2B0A808F00162D72 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AF84808F2B0A80AD00162D72 /* GMSMarker extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		AFA8196B2B026F4200AB9255 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +99,10 @@
 		AFA819762B026F4200AB9255 /* GoogleMapsTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				AFA819772B026F4200AB9255 /* GoogleMapsTestAppApp.swift */,
-				AFA819792B026F4200AB9255 /* MapView.swift */,
-				AFC415FA2B029896004D2E21 /* GoogleMapView */,
+				AF84808E2B0A808F00162D72 /* Helpers */,
+				AF75EA3A2B09343200662462 /* Models */,
+				AF75EA332B09230200662462 /* Services */,
+				AFE42BDA2B03F29A0036C35F /* UserStories */,
 				AFC415F92B029868004D2E21 /* Resources */,
 				AFA8197D2B026F4300AB9255 /* Preview Content */,
 			);
@@ -81,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				AFA8197B2B026F4300AB9255 /* Assets.xcassets */,
+				AFE42BDD2B03FF4D0036C35F /* ResourcesEnums.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -91,6 +132,34 @@
 				AFC415FC2B0298B6004D2E21 /* GoogleMapView.swift */,
 			);
 			path = GoogleMapView;
+			sourceTree = "<group>";
+		};
+		AFE42BDA2B03F29A0036C35F /* UserStories */ = {
+			isa = PBXGroup;
+			children = (
+				AFA819772B026F4200AB9255 /* GoogleMapsTestAppApp.swift */,
+				AFE42BDF2B0405A00036C35F /* CustomViews */,
+				AFC415FA2B029896004D2E21 /* GoogleMapView */,
+				AFE42BDB2B03F2AA0036C35F /* MainView */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		AFE42BDB2B03F2AA0036C35F /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				AFA819792B026F4200AB9255 /* MainView.swift */,
+				AF75EA382B092C0400662462 /* MainViewModel.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		AFE42BDF2B0405A00036C35F /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				AFE42BE02B0405C00036C35F /* CustomProgressViewStyle.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		B364A3499311C0342F0BBE3B /* Frameworks */ = {
@@ -225,8 +294,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC415FD2B0298B6004D2E21 /* GoogleMapView.swift in Sources */,
-				AFA8197A2B026F4200AB9255 /* MapView.swift in Sources */,
+				AFA8197A2B026F4200AB9255 /* MainView.swift in Sources */,
+				AF8480902B0A80AD00162D72 /* GMSMarker extension.swift in Sources */,
+				AFE42BDE2B03FF4D0036C35F /* ResourcesEnums.swift in Sources */,
 				AFA819782B026F4200AB9255 /* GoogleMapsTestAppApp.swift in Sources */,
+				AF75EA352B0927FB00662462 /* NetworkService.swift in Sources */,
+				AF75EA372B09287400662462 /* CoordinateModel.swift in Sources */,
+				AF75EA3C2B09344B00662462 /* CoordinatesAndDateModels.swift in Sources */,
+				AFE42BE12B0405C00036C35F /* CustomProgressViewStyle.swift in Sources */,
+				AF75EA392B092C0400662462 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,9 +442,9 @@
 				ENABLE_TESTABILITY = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoogleMapsTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -397,9 +473,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoogleMapsTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
