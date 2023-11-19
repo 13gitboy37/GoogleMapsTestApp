@@ -12,10 +12,12 @@ import SwiftUI
 struct GoogleMapsTestAppApp: App {
     init () {
         GMSServices.provideAPIKey("AIzaSyBCzZZicSBHz6H9p-6-U3Jdz8OATYFhFk4")
+        GMSServices.setMetalRendererEnabled(true)
     }
     var body: some Scene {
         WindowGroup {
-            MapView()
+            let viewModel = MainViewModel(networkService: NetworkManager())
+            MainView(viewModel: viewModel)
         }
     }
 }
