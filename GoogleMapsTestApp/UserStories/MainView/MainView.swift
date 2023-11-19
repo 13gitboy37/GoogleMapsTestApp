@@ -10,10 +10,15 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var viewModel: MainViewModel
+    @State var isAnimateRoute: Bool = false
 
     var body: some View {
         ZStack {
-            GoogleMapView(coordinates: $viewModel.coordinates, zoom: $viewModel.zoom)
+            GoogleMapView(
+                coordinates: $viewModel.coordinates,
+                zoom: $viewModel.zoom,
+                isAnimateRoute: $isAnimateRoute
+            )
                 .ignoresSafeArea(edges: .top)
             VStack {
                 createLeftSideButtonBar()
@@ -85,60 +90,27 @@ struct MainView: View {
                 .padding(.leading, 16)
                 .padding(.bottom, 8.5)
 
-            HStack {
-                Button {
-                    print("calendar tapped")
-                } label: {
-                    HStack(alignment: .center) {
-                        Image(systemName: "calendar")
-                            .font(.system(size: 16))
-                            .padding(.leading, 13)
-                        Text(viewModel.makeDatesString())
-                            .font(.system(size: 12))
-                            .padding(.leading, -4)
-                    }
-                    .frame(alignment: .center)
-                    .foregroundColor(.black)
-                }
-                .disabled(true)
+            HStack(spacing: 20) {
+                createInfoButton(
+                    image: Image(ImageEnum.calendar.name),
+                    text: viewModel.makeDatesString(),
+                    action: { print("calendar tapped") }
+                )
 
-                Button {
-                    print("distance tapped")
-                } label: {
-                    HStack(alignment: .center) {
-                        Image(ImageEnum.distance.name)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 19, height: 19)
-                            .padding(.leading, 13)
-                        Text("10 км")
-                            .font(.system(size: 12))
-                            .padding(.leading, -4)
-                    }
-                    .frame(alignment: .center)
-                    .foregroundColor(.black)
-                }
-                .disabled(true)
+                createInfoButton(
+                    image: Image(ImageEnum.distance.name),
+                    text: "10 км",
+                    action: { print("distance tapped") }
+                )
 
-                Button {
-                    print("speed tapped")
-                } label: {
-                    HStack(alignment: .center) {
-                        Image(ImageEnum.speedometr.name)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 19, height: 19)
-                            .padding(.leading, 13)
-                        Text("До 98 км/ч")
-                            .font(.system(size: 12))
-                            .padding(.leading, -4)
-                    }
-                    .frame(alignment: .center)
-                    .foregroundColor(.black)
-                }
-                .disabled(true)
+                createInfoButton(
+                    image: Image(ImageEnum.speedometr.name),
+                    text: "До 98 км/ч",
+                    action: { print("speed tapped") }
+                )
             }
             .padding(.top, 4)
+            .padding(.leading, 13)
             .padding(.bottom, 10)
 
             ProgressView(value: viewModel.data, label: {}, currentValueLabel: { Text("30%") })
@@ -152,7 +124,26 @@ struct MainView: View {
             .padding(.bottom, 23)
         }
         .frame(height: 213)
-        .background(Color.white.opacity(0.95))
+        .background(Color.white.opacity(0.98))
+    }
+
+    private func createInfoButton(image: Image, text: String, action: @escaping () -> Void) -> some View {
+        Button {
+            action()
+        } label: {
+            HStack(alignment: .center) {
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 19, height: 19)
+                Text(text)
+                    .font(.system(size: 12))
+                    .padding(.leading, -4)
+            }
+            .frame(alignment: .center)
+            .foregroundColor(.black)
+        }
+        .disabled(true)
     }
 
     private func createControlReplayButton() -> some View {
@@ -169,9 +160,9 @@ struct MainView: View {
             Spacer()
 
             Button {
-                print("tapped play")
+                isAnimateRoute.toggle()
             } label: {
-                Image(systemName: "play.fill")
+                Image(systemName: isAnimateRoute ? "pause.fill" : "play.fill")
                     .font(.system(size: 34))
             }
 
