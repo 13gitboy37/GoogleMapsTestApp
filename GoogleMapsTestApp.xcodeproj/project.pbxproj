@@ -17,6 +17,7 @@
 		AFA8197A2B026F4200AB9255 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA819792B026F4200AB9255 /* MainView.swift */; };
 		AFA8197C2B026F4300AB9255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA8197B2B026F4300AB9255 /* Assets.xcassets */; };
 		AFA8197F2B026F4300AB9255 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA8197E2B026F4300AB9255 /* Preview Assets.xcassets */; };
+		AFBE267B2B0BE6E1006897DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE267A2B0BE6E1006897DC /* NetworkManager.swift */; };
 		AFC415FD2B0298B6004D2E21 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC415FC2B0298B6004D2E21 /* GoogleMapView.swift */; };
 		AFE42BDE2B03FF4D0036C35F /* ResourcesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE42BDD2B03FF4D0036C35F /* ResourcesEnums.swift */; };
 		AFE42BE12B0405C00036C35F /* CustomProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE42BE02B0405C00036C35F /* CustomProgressViewStyle.swift */; };
@@ -35,6 +36,7 @@
 		AFA819792B026F4200AB9255 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AFA8197B2B026F4300AB9255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFA8197E2B026F4300AB9255 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFBE267A2B0BE6E1006897DC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AFC415FC2B0298B6004D2E21 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
 		AFE42BDD2B03FF4D0036C35F /* ResourcesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesEnums.swift; sourceTree = "<group>"; };
 		AFE42BE02B0405C00036C35F /* CustomProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressViewStyle.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				AF75EA342B0927FB00662462 /* NetworkService.swift */,
+				AFBE267A2B0BE6E1006897DC /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				AFA8197A2B026F4200AB9255 /* MainView.swift in Sources */,
 				AF8480902B0A80AD00162D72 /* GMSMarker extension.swift in Sources */,
 				AFE42BDE2B03FF4D0036C35F /* ResourcesEnums.swift in Sources */,
+				AFBE267B2B0BE6E1006897DC /* NetworkManager.swift in Sources */,
 				AFA819782B026F4200AB9255 /* GoogleMapsTestAppApp.swift in Sources */,
 				AF75EA352B0927FB00662462 /* NetworkService.swift in Sources */,
 				AF75EA372B09287400662462 /* CoordinateModel.swift in Sources */,

@@ -8,12 +8,15 @@
 import Foundation
 
 enum ImageEnum {
+    case calendar
     case speedometr
     case distance
     case marker
 
     var name: String {
         switch self {
+        case .calendar:
+            return "calendar"
         case .speedometr:
             return "speedometr"
         case .distance:

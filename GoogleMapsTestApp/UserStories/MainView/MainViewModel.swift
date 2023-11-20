@@ -15,9 +15,10 @@ final class MainViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var data = 0.0
 
-    private let dateFormatter = DateFormatter()
     private let networkService: NetworkService
+    private let dateFormatter = DateFormatter()
     private let receiveQueue = DispatchQueue.global(qos: .userInteractive)
+
     private var cancellables: Set<AnyCancellable> = .init()
 
     init(networkService: NetworkService) {
@@ -27,6 +28,7 @@ final class MainViewModel: ObservableObject {
     func fetchCoordinates() {
         isLoading = true
         networkService.getCoordinatesPublisher(.getCoordinates)
+            .compactMap { $0 }
             .receive(on: receiveQueue)
             .sink { [weak self] completion in
                 if case .failure(let error) = completion {

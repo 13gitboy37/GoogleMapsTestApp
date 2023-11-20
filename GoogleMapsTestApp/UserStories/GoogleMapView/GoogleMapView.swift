@@ -13,6 +13,7 @@ struct GoogleMapView: UIViewRepresentable {
 
     @Binding var coordinates: [CoordinateForMapModel]
     @Binding var zoom: Float
+    @Binding var isAnimateRoute: Bool
 
     func makeUIView(context: Context) -> GMSMapView {
         let mapView = GMSMapView()
@@ -26,20 +27,31 @@ struct GoogleMapView: UIViewRepresentable {
         context.coordinator.changeZoom(mapView: uiView)
         context.coordinator.addMarker(mapView: uiView)
         context.coordinator.addPolygon(mapView: uiView)
+        if isAnimateRoute {
+            context.coordinator.playAnimate(mapView: uiView)
+        } else {
+            context.coordinator.stopAnimate(mapView: uiView)
+        }
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(coordinates: coordinates, zoom: zoom)
+        return Coordinator(coordinates: coordinates, zoom: zoom, parent: self)
     }
 }
 
 final class Coordinator: NSObject {
     var coordinates: [CoordinateForMapModel]
     var zoom: Float
+    var parent: GoogleMapView
 
-    init(coordinates: [CoordinateForMapModel], zoom: Float) {
+    var currentPosition: Int = 0
+    let marker = GMSMarker()
+    var timer = Timer()
+
+    init(coordinates: [CoordinateForMapModel], zoom: Float, parent: GoogleMapView) {
         self.coordinates = coordinates
         self.zoom = zoom
+        self.parent = parent
     }
 
     func changeZoom(mapView: GMSMapView) {
@@ -50,7 +62,7 @@ final class Coordinator: NSObject {
         guard let coordinate = coordinates.first else {
             return
         }
-        let marker = GMSMarker()
+
         marker.icon = UIImage(named: ImageEnum.marker.name)
         marker.setIconSize(scaledToSize: CGSize(width: 20, height: 20))
         marker.position = CLLocationCoordinate2D(latitude: coordinate.lantitude, longitude: coordinate.longitude)
@@ -66,8 +78,41 @@ final class Coordinator: NSObject {
 
         let polyline = GMSPolyline(path: path)
         polyline.strokeColor = .blue
-        polyline.strokeWidth = 5.0
+        polyline.strokeWidth = 3.0
         polyline.map = mapView
+    }
+
+    func playAnimate(mapView: GMSMapView) {
+        self.timer = Timer.scheduledTimer(withTimeInterval: 0.0001, repeats: true, block: { [weak self] _ in
+            self?.animateTrack(mapView: mapView)
+        })
+
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
+    }
+
+    func stopAnimate(mapView: GMSMapView) {
+        currentPosition = 0
+        timer.invalidate()
+        addMarker(mapView: mapView)
+        parent.isAnimateRoute = false
+    }
+
+    func animateTrack(mapView: GMSMapView){
+        if currentPosition <= self.coordinates.count - 1 {
+            let position = CLLocationCoordinate2D(
+                latitude: self.coordinates[currentPosition].lantitude,
+                longitude: self.coordinates[currentPosition].longitude
+            )
+            self.marker.position = position
+            mapView.camera = GMSCameraPosition(target: position, zoom: zoom)
+            self.marker.groundAnchor = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
+
+            if currentPosition == self.coordinates.count - 1 {
+                stopAnimate(mapView: mapView)
+            }
+
+            currentPosition += 1
+        }
     }
 }
 
