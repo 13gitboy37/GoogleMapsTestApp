@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct GoogleMapsTestAppApp: App {
-    init () {
+    init() {
         GMSServices.provideAPIKey("AIzaSyBCzZZicSBHz6H9p-6-U3Jdz8OATYFhFk4")
         GMSServices.setMetalRendererEnabled(true)
     }

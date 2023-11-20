@@ -113,7 +113,7 @@ struct MainView: View {
             .padding(.leading, 13)
             .padding(.bottom, 10)
 
-            ProgressView(value: viewModel.data, label: {}, currentValueLabel: { Text("30%") })
+            ProgressView(value: viewModel.data)
                 .progressViewStyle(BarProgressStyle(height: 3))
                 .padding(.top, 43.5)
                 .padding(.horizontal, 16)

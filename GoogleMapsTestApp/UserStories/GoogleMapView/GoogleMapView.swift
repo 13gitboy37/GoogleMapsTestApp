@@ -32,27 +32,26 @@ struct GoogleMapView: UIViewRepresentable {
         } else {
             context.coordinator.stopAnimate(mapView: uiView)
         }
-        isAnimateRoute = context.coordinator.isAnimate
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(coordinates: coordinates, zoom: zoom, isAnimate: isAnimateRoute)
+        return Coordinator(coordinates: coordinates, zoom: zoom, parent: self)
     }
 }
 
 final class Coordinator: NSObject {
     var coordinates: [CoordinateForMapModel]
     var zoom: Float
-    var isAnimate: Bool
+    var parent: GoogleMapView
 
     var currentPosition: Int = 0
     let marker = GMSMarker()
     var timer = Timer()
 
-    init(coordinates: [CoordinateForMapModel], zoom: Float, isAnimate: Bool) {
+    init(coordinates: [CoordinateForMapModel], zoom: Float, parent: GoogleMapView) {
         self.coordinates = coordinates
         self.zoom = zoom
-        self.isAnimate = isAnimate
+        self.parent = parent
     }
 
     func changeZoom(mapView: GMSMapView) {
@@ -95,7 +94,7 @@ final class Coordinator: NSObject {
         currentPosition = 0
         timer.invalidate()
         addMarker(mapView: mapView)
-        isAnimate = false
+        parent.isAnimateRoute = false
     }
 
     func animateTrack(mapView: GMSMapView){

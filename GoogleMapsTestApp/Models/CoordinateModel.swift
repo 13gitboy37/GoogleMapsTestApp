@@ -13,10 +13,12 @@ enum CoordinateModel: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
+
         if let data = try? container.decode(Double.self) {
             self = .coordinate(data)
             return
         }
+        
         if let data = try? container.decode(String.self) {
             self = .date(data)
             return
